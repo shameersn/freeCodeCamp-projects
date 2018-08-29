@@ -4,6 +4,10 @@
   --yellow: #ffc484;
   --red: #fa339a;
 }
+body {
+  padding: 0;
+  margin: 0;
+}
 #main {
   font-size: 16px;
   color: var(--red);
