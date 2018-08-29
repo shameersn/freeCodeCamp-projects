@@ -1,0 +1,57 @@
+:root {
+  /* custom colors   */
+  --blue: #69c1ff;
+  --yellow: #ffc484;
+  --red: #fa339a;
+}
+#main {
+  font-size: 16px;
+  color: var(--red);
+  background: var(--yellow);
+}
+header,
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: var(--blue);
+}
+header {
+  min-height: 120px;
+}
+footer {
+  min-height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  max-width: 960px;
+  padding: 20px;
+  margin: 0 auto;
+  border-radius: 2px;
+  min-height: 420px;
+  font-weight: bold;
+}
+#image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+#img-caption {
+  text-align: center;
+  padding: 10px 0;
+}
+
+#tribute-info {
+  text-align: justify;
+  line-height: 1.4;
+}
+
+#tribute-link {
+  text-decoration: none;
+  padding: 0 5px;
+}
+#tribute-link:hover {
+  text-decoration: underline;
+}

@@ -1,3 +1,3 @@
 # freeCodeCamp-projects
 FreeCodeCamp projects for certification
-1. Contains each projects as a new branch and will connect to netlify for view
+1. FreeCodeCamp - Build a Tribute Page - Gautam Buddha, Founder of Buddism
