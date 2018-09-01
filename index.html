@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>FreecodeCamp - Build a technical documentation page</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <aside>
+    <nav id="navbar">
+      <header>
+        Angular
+      </header>
+      <ul>
+        <li>
+          <a href="#what_is_angular" class="nav-link">Introduction</a>
+        </li>
+        <li>
+          <a href="#quick_start" class="nav-link">Getting started</a>
+        </li>
+        <li>
+          <a href="#architecture_overview" class="nav-link">Architecture overview</a>
+        </li>
+        <li>
+          <a href="#introduction_to_modules" class="nav-link">Introduction to modules</a>
+        </li>
+        <li>
+          <a href="#introduction_to_components" class="nav-link">Introduction to components</a>
+        </li>
+        <li>
+          <a href="#reference" class="nav-link">Reference</a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+  <main id="main-doc">
+    <section class="main-section" id="what_is_angular">
+      <header>What is angular?</header>
+      <p>
+        Angular is a platform that makes it easy to build applications with the web. Angular combines declarative templates, dependency
+        injection, end to end tooling, and integrated best practices to solve development challenges. Angular empowers developers
+        to build applications that live on the web, mobile, or the desktop</p>
+    </section>
+    <section class="main-section" id="quick_start">
+      <header>QuickStart</header>
+      <p>
+        Good tools make application development quicker and easier to maintain than if you did everything by hand.</p>
+      <p>The Angular CLI is a command line interface tool that can create a project, add files, and perform a variety of
+        ongoing development tasks such as testing, bundling, and deployment.</p>
+      <p>
+        The goal in this guide is to build and run a simple Angular application in TypeScript, using the Angular CLI while adhering
+        to the Style Guide recommendations that benefit every Angular project.
+      </p>
+      <p>
+        By the end of the chapter, you'll have a basic understanding of development with the CLI and a foundation for both these
+        documentation samples and for real world applications.
+      </p>
+      <h3>Step 1. Set up the Development Environment </h3>
+      <p>
+        You need to set up your development environment before you can do anything. Install Node.js® and npm if they are not already
+        on your machine.
+      </p>
+      <p>
+        Then install the Angular CLI globally.
+      </p>
+      <code>
+          npm install -g @angular/cli
+      </code>
+      <h3>Step 2. Create a new project</h3>
+      <p>Open a terminal window</p>
+      <p>
+        Generate a new project and default app by running the following command:
+      </p>
+      <code>
+          ng new app
+      </code>
+      <p>
+        The Angular CLI installs the necessary npm packages, creates the project files, and populates the project with a simple default
+        app. This can take some time.
+      </p>
+      <h3>
+        Step 3: Serve the application
+      </h3>
+      <p>
+        Go to the project directory and launch the server.
+      </p>
+      <code>
+        <pre>
+          cd my-app
+          ng serve --open
+        </pre>
+      </code>
+      <p>
+        The ng serve command launches the server, watches your files, and rebuilds the app as you make changes to those files. Using
+        the --open (or just -o) option will automatically open your browser on http://localhost:4200/. Your app greets you
+        with a message:
+      </p>
+      <h3>
+        Step 4: Edit your first Angular component
+      </h3>
+      <p>
+        The CLI created the first Angular component for you. This is the root component and it is named app-root. You can find it
+        in <em>./src/app/app.component.ts</em>.
+      </p>
+      <p>
+        Open the component file and change the title property from 'app' to 'My First Angular App!'.
+      </p>
+      <code>
+      <pre>
+        export class AppComponent {
+          title = 'My First Angular App!';
+          }
+      </pre>
+      </code>
+    </section>
+    <section class="main-section" id="architecture_overview">
+      <header>Architecture overview</header>
+      <p>
+        Angular is a platform and framework for building client applications in HTML and TypeScript. Angular is written in TypeScript.
+        It implements core and optional functionality as a set of TypeScript libraries that you import into your apps.</p>
+      <p>
+        The basic building blocks of an Angular application are NgModules, which provide a compilation context for components. NgModules
+        collect related code into functional sets; an Angular app is defined by a set of NgModules. An app always has at
+        least a root module that enables bootstrapping, and typically has many more feature modules.
+      </p>
+      <ul>
+        <li>
+          Components define views, which are sets of screen elements that Angular can choose among and modify according to your program
+          logic and data.
+        </li>
+        <li>
+          Components use services, which provide specific functionality not directly related to views. Service providers can be injected
+          into components as dependencies, making your code modular, reusable, and efficient.
+        </li>
+      </ul>
+      <p>
+        Both components and services are simply classes, with decorators that mark their type and provide metadata that tells Angular
+        how to use them.
+      </p>
+      <ul>
+        <li>
+          The metadata for a component class associates it with a template that defines a view. A template combines ordinary HTML with
+          Angular directives and binding markup that allow Angular to modify the HTML before rendering it for display.
+        </li>
+        <li>
+          The metadata for a service class provides the information Angular needs to make it available to components through dependency
+          injection (DI).
+        </li>
+      </ul>
+      <p>
+        An app's components typically define many views, arranged hierarchically. Angular provides the Router service to help you
+        define navigation paths among views. The router provides sophisticated in-browser navigational capabilities.
+
+
+      </p>
+      <h3>Modules</h3>
+      <p>
+        Angular NgModules differ from and complement JavaScript (ES2015) modules. An NgModule declares a compilation context for
+        a set of components that is dedicated to an application domain, a workflow, or a closely related set of capabilities.
+        An NgModule can associate its components with related code, such as services, to form functional units.
+      </p>
+      <p>
+        Every Angular app has a root module, conventionally named AppModule, which provides the bootstrap mechanism that launches
+        the application. An app typically contains many functional modules.
+      </p>
+      <p>
+        Like JavaScript modules, NgModules can import functionality from other NgModules, and allow their own functionality to be
+        exported and used by other NgModules. For example, to use the router service in your app, you import the Router NgModule.
+      </p>
+      <p>
+        Organizing your code into distinct functional modules helps in managing development of complex applications, and in designing
+        for reusability. In addition, this technique lets you take advantage of lazy-loading—that is, loading modules on
+        demand—to minimize the amount of code that needs to be loaded at startup.
+      </p>
+      <h3>
+        Components
+      </h3>
+      <p>
+        Every Angular application has at least one component, the root component that connects a component hierarchy with the page
+        document object model (DOM). Each component defines a class that contains application data and logic, and is associated
+        with an HTML template that defines a view to be displayed in a target environment.
+      </p>
+      <p>
+        The @Component() decorator identifies the class immediately below it as a component, and provides the template and related
+        component-specific metadata.
+      </p>
+      <h3>Templates, directives, and data binding </h3>
+      <p>
+        A template combines HTML with Angular markup that can modify HTML elements before they are displayed. Template directives
+        provide program logic, and binding markup connects your application data and the DOM. There are two types of data
+        binding:
+      </p>
+      <ul>
+        <li>Event binding lets your app respond to user input in the target environment by updating your application data.</li>
+        <li>Property binding lets you interpolate values that are computed from your application data into the HTML.</li>
+      </ul>
+      <p>
+        Before a view is displayed, Angular evaluates the directives and resolves the binding syntax in the template to modify the
+        HTML elements and the DOM, according to your program data and logic. Angular supports two-way data binding, meaning
+        that changes in the DOM, such as user choices, are also reflected in your program data.
+      </p>
+      <p>
+        Your templates can use pipes to improve the user experience by transforming values for display. For example, use pipes to
+        display dates and currency values that are appropriate for a user's locale. Angular provides predefined pipes for
+        common transformations, and you can also define your own pipes.
+      </p>
+    </section>
+    <section class="main-section" id="introduction_to_modules">
+      <header>Introduction to modules</header>
+      <p>
+        Angular apps are modular and Angular has its own modularity system called NgModules. NgModules are containers for a cohesive
+        block of code dedicated to an application domain, a workflow, or a closely related set of capabilities. They can
+        contain components, service providers, and other code files whose scope is defined by the containing NgModule. They
+        can import functionality that is exported from other NgModules, and export selected functionality for use by other
+        NgModules.
+      </p>
+      <p>
+        Every Angular app has at least one NgModule class, the root module, which is conventionally named AppModule and resides in
+        a file named <em> app.module.ts</em>. You launch your app by bootstrapping the root NgModule.
+      </p>
+      <p>
+        While a small application might have only one NgModule, most apps have many more feature modules. The root NgModule for an
+        app is so named because it can include child NgModules in a hierarchy of any depth.
+      </p>
+      <h3>
+        NgModule metadata
+      </h3>
+      <p>
+        An NgModule is defined by a class decorated with @NgModule(). The @NgModule() decorator is a function that takes a single
+        metadata object, whose properties describe the module. The most important properties are as follows.
+      </p>
+      <ul>
+        <li>declarations: The components, directives, and pipes that belong to this NgModule.</li>
+        <li>exports: The subset of declarations that should be visible and usable in the component templates of other NgModules.</li>
+        <li>imports: Other modules whose exported classes are needed by component templates declared in this NgModule.</li>
+        <li>providers: Creators of services that this NgModule contributes to the global collection of services; they become
+          accessible in all parts of the app. (You can also specify providers at the component level, which is often preferred.)</li>
+        <li>bootstrap: The main application view, called the root component, which hosts all other app views. Only the root
+          NgModule should set the bootstrap property.</li>
+      </ul>
+      <p>Here's a simple root NgModule definition.</p>
+      <code>
+        <pre>
+  import { NgModule }      from '@angular/core';
+  import { BrowserModule } from '@angular/platform-browser';
+  @NgModule({
+    imports:      [ BrowserModule ],
+    providers:    [ Logger ],
+    declarations: [ AppComponent ],
+    exports:      [ AppComponent ],
+    bootstrap:    [ AppComponent ]
+  })
+  export class AppModule { }
+        </pre>
+      </code>
+    </section>
+    <section class="main-section" id="introduction_to_components">
+      <header>Introduction to components</header>
+      <p>
+        A component controls a patch of screen called a view. For example, individual components define and control each of the following
+        views from the Tutorial:
+      </p>
+      <ul>
+        <li>
+          The app root with the navigation links.
+        </li>
+        <li>
+          The list of heroes.
+        </li>
+        <li>
+          The hero editor.
+        </li>
+      </ul>
+      <p>
+        You define a component's application logic—what it does to support the view—inside a class. The class interacts with the
+        view through an API of properties and methods.
+      </p>
+      <p>
+        For example, HeroListComponent has a heroes property that holds an array of heroes. Its selectHero() method sets a selectedHero
+        property when the user clicks to choose a hero from that list. The component acquires the heroes from a service,
+        which is a TypeScript parameter property on the constructor. The service is provided to the component through the
+        dependency injection system.
+      </p>
+      <code>
+        <pre>
+            export class HeroListComponent implements OnInit {
+              heroes: Hero[];
+              selectedHero: Hero;
+            
+              constructor(private service: HeroService) { }
+            
+              ngOnInit() {
+                this.heroes = this.service.getHeroes();
+              }
+            
+              selectHero(hero: Hero) { this.selectedHero = hero; }
+            }
+        </pre>
+      </code>
+    </section>
+    <section class="main-section" id="reference">
+      <header>Reference</header>
+      <ul>
+        <li>
+          All the documentation in this page is taken from <a target="_blank" href="https://angular.io/">Angular.io</a>
+        </li>
+      </ul>
+    </section>
+  </main>
+</body>
+
+</html>
