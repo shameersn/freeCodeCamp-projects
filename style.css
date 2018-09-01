@@ -42,7 +42,7 @@ main {
 .brand {
   width: 60vw;
 }
-.header-img {
+#header-img {
   max-width: 200px;
   margin-left: 50px;
 }
